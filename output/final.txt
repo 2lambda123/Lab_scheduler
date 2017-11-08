@@ -1,0 +1,41 @@
+Nr.   Week   Date     Time    Teacher
+1     Thu    11-23    08-11   Martin
+2     Thu    11-23    10-13   Ashwin Vishnu Mohanan
+3     Thu    11-23    12-15   Velibor
+4     Thu    11-23    14-17   Susumu Yada
+5     Thu    11-23    16-19   Sagar
+6     Fri    11-24    12-15   Velibor
+7     Fri    11-24    14-17   Susumu Yada
+8     Fri    11-24    16-19   Ashwin Vishnu Mohanan
+9     Mon    11-27    08-11   Sagar
+10    Mon    11-27    10-13   Susumu Yada
+11    Mon    11-27    15-18   Anthony
+12    Tue    11-28    08-11   Anthony
+13    Tue    11-28    10-13   Martin
+14    Tue    11-28    12-15   Susumu Yada
+15    Tue    11-28    14-17   Ashwin Vishnu Mohanan
+16    Tue    11-28    16-19   Sagar
+17    Wed    11-29    08-11   Velibor
+18    Wed    11-29    10-13   Ashwin Vishnu Mohanan
+19    Wed    11-29    12-15   Martin
+20    Wed    11-29    14-17   Susumu Yada
+21    Wed    11-29    16-19   Sagar
+22    Thu    11-30    08-11   Velibor
+23    Thu    11-30    10-13   Martin
+24    Thu    11-30    12-15   Ashwin Vishnu Mohanan
+25    Thu    11-30    14-17   Susumu Yada
+26    Thu    11-30    16-19   Sagar
+27    Fri    12-01    12-15   Velibor
+28    Fri    12-01    14-17   Anthony
+29    Fri    12-01    16-19   Ashwin Vishnu Mohanan
+30    Mon    12-04    08-11   Anthony
+31    Mon    12-04    10-13   Martin
+32    Mon    12-04    15-18   Ashwin Vishnu Mohanan
+33    Tue    12-05    08-11   Sagar
+34    Tue    12-05    10-13   Velibor
+35    Tue    12-05    12-15   Martin
+36    Tue    12-05    14-17   Susumu Yada
+37    Tue    12-05    16-19   Martin
+38    Wed    12-06    08-11   Sagar
+39    Wed    12-06    10-13   Velibor
+40    Wed    12-06    15-18   Anthony
