@@ -29,7 +29,7 @@ def normalized_prob_from_count(counts_names):
     if nb_names == 1:
         return np.array([1.])
     else:
-        # Less probability if already appeared several times
+        # Less probability if already appeared assigned many slots
         prob = 1. - counts_names / counts_names.sum()
         prob /= (nb_names - 1)
         return prob
