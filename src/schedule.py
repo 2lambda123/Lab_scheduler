@@ -1,3 +1,4 @@
+from __future__ import print_function
 import sys
 import numpy as np
 from matplotlib import pyplot as plt
@@ -94,7 +95,7 @@ def reduced_comb(nphd,ilab,nlab,lmax):
             if cpi[m+ilab] == 1.: # note the index shift
                 s[m].append(i)
 
-    print 'Input list mapped from choices: \n',s,'\n'
+    print('Input list mapped from choices: \n',s,'\n')
     
     #---> Remove empty sub-list
 
@@ -105,29 +106,29 @@ def reduced_comb(nphd,ilab,nlab,lmax):
             isem.append(i)    
     
     if kem > 0:
-        print 'Number of empty labs =',kem,'\nIndex list',isem
+        print('Number of empty labs =',kem,'\nIndex list',isem)
         k,sfull = 0,[ [] ]*(nlab-kem)
         for i in range(nlab):
             if s[i]:
                 sfull[k] = s[i]
                 k += 1
             
-        print 'Remaining list',sfull,'\n'
+        print('Remaining list',sfull,'\n')
         nlab = nlab - kem
 
     else:
-        print 'All labs filled! \n'
+        print('All labs filled! \n')
 
     ncom = 1
     for i in range(nlab):
         ncom *= len(sfull[i])
 
-    print 'Number of all possible combinations =',ncom,'\n'
+    print('Number of all possible combinations =',ncom,'\n')
     
     #---> Generate combinations
 
     if nphd == 1:
-        print 'The only combination is \n',sfull
+        print('The only combination is \n',sfull)
         sys.exit()
     
     else:
@@ -137,8 +138,8 @@ def reduced_comb(nphd,ilab,nlab,lmax):
 
     nc = len(comb_list)
     if nc != ncom:
-        print 'Number of combinations inconsistent.'
-        print 'Program aborted.'
+        print('Number of combinations inconsistent.')
+        print('Program aborted.')
         sys.exit()
         
     sigma = [0]*nc
@@ -203,12 +204,12 @@ def reduced_comb(nphd,ilab,nlab,lmax):
 
         comb_list_new = temp
         
-        print 'Reduced number of combinations =',lmax,'\n'
-        print 'List of combinations \n',comb_list_new,'\n'
+        print('Reduced number of combinations =',lmax,'\n')
+        print('List of combinations \n',comb_list_new,'\n')
 
     else:
-        print 'Reduced number of combinations =',nc_new,'\n'
-        print 'List of combinations \n',comb_list_new,'\n'
+        print('Reduced number of combinations =',nc_new,'\n')
+        print('List of combinations \n',comb_list_new,'\n')
 
     return comb_list_new
 
@@ -245,8 +246,8 @@ if __name__ == '__main__':
 
     for i in range(nday):
 
-        print '--------------------------'
-        print 'Lab day',i+1,'\n'
+        print('--------------------------')
+        print('Lab day',i+1,'\n')
 
         ilab = iday[i]         # beginning index of lab day i
         nlab = iday[i+1]-ilab  # number of labs in lab day i
@@ -267,30 +268,30 @@ if __name__ == '__main__':
         if len(comb_day) == 0:
             nday -= 1
             empty_day.append(i)
-            print 'Empty list.'
+            print('Empty list.')
         else:
             ncom *= len(comb_day)
             comb_all.append(comb_day)
             load_all.append(load_day)
 
-    print '\n-----------------------------------------'
-    print 'Total number of combinations =',ncom,'\n'
-    print 'List of day-list of combination-list: \n',comb_all
-    print 'List of day-list of load-list: \n',load_all, '\n'
+    print('\n-----------------------------------------')
+    print('Total number of combinations =',ncom,'\n')
+    print('List of day-list of combination-list: \n',comb_all)
+    print('List of day-list of load-list: \n',load_all, '\n')
    
     
     #---> Generate the complete combinations
     
-    print 'Generating list of list of list...'
+    print('Generating list of list of list...')
     
     comb = stupid_comb(comb_all)
     load = stupid_comb(load_all)
 
-    print 'Done.\n'
+    print('Done.\n')
 
     #---> Evaluate load
 
-    print 'Computing the work load of each combination...'
+    print('Computing the work load of each combination...')
 
     LD = []
     SG = [0]*ncom
@@ -313,24 +314,24 @@ if __name__ == '__main__':
             SG[i] = (SG[i]/(nphd-1))**0.5  # standard deviation
 
     #print 'Minimum standard deviation =',min(SG)
-    print 'Done.\n'
+    print('Done.\n')
     
     # index array of sorted list of sigma
-    print 'Sorting the deviation list...'
+    print('Sorting the deviation list...')
     isg = sorted(range(len(SG)), key=lambda k: SG[k])
-    print 'Done.\n'
+    print('Done.\n')
     
     
-    print '--------------------------------------------------------------------------------'
+    print('--------------------------------------------------------------------------------')
     ntop = 3
-    print 'The',ntop,'best combinations are \n'
+    print('The',ntop,'best combinations are \n')
     for i in range(ntop):
-        print '(',i+1,') Load distribution:',LD[isg[i]],'Standard deviation:',SG[isg[i]]
-        print comb[isg[i]],'\n'
+        print('(',i+1,') Load distribution:',LD[isg[i]],'Standard deviation:',SG[isg[i]])
+        print(comb[isg[i]],'\n')
         
     if empty_day:
-        print 'Note that days',empty_day,'(begin from 0) is/are not filled.'
-    print '--------------------------------------------------------------------------------'
+        print('Note that days',empty_day,'(begin from 0) is/are not filled.')
+    print('--------------------------------------------------------------------------------')
             
 
     # Create a file and write the final combination
